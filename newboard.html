@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard 2</title>
+    <style>
+        .cell{
+            height: 30px;
+            width: 30px;
+            border: 1px solid grey;
+            border-style: inset;
+        }
+
+        .blackcell{
+            background-color: black;
+        }
+
+        .whitecell{
+            background-color: white;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <script>
+        var chessTable = document.createElement("talbe");
+
+        for(var i=0; i<8; i++){
+            var tr = document.createElement("tr");
+
+            for (var j=0; j < 8; j++){
+                var td = document.createElement("td");
+
+                if((i+j) % 2 == 0){
+                   td.setAttribute("class", "cell whitecell");
+
+                }
+                else{
+                      td.setAttribute("class", "cell blackcell");
+                }
+                
+                tr.appendChild(td)
+            }
+
+            chessTable.appendChild(tr);
+
+        }
+
+        document.body.appendChild(chessTable);
+    </script>
+    
+</body>
+</html>
